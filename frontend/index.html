@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Instructor Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="chat-header">
+            <div class="header-content">
+                <div class="instructor-info">
+                    <div class="avatar">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="info">
+                        <h1>DSA Instructor</h1>
+                        <p class="status">
+                            <span class="status-dot"></span>
+                            Online - Ready to help with Data Structures & Algorithms
+                        </p>
+                    </div>
+                </div>
+                <div class="settings">
+                    <button class="settings-btn" id="settingsBtn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            Welcome! I'm your DSA Instructor. Ask me anything about Data Structures and Algorithms, and I'll help you understand in the simplest way possible. 
+                            <br><br>
+                            <strong>Remember:</strong> I only answer DSA-related questions. Ask wisely! 🤓
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="chat-input-container">
+            <div class="input-wrapper">
+                <div class="input-group">
+                    <input type="text" 
+                           id="messageInput" 
+                           placeholder="Ask me about Arrays, Linked Lists, Trees, Sorting..." 
+                           autocomplete="off">
+                    <button class="send-btn" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-questions">
+                    <button class="quick-btn" data-question="What is Big O notation?">Big O Notation</button>
+                    <button class="quick-btn" data-question="Explain binary search">Binary Search</button>
+                    <button class="quick-btn" data-question="What are linked lists?">Linked Lists</button>
+                    <button class="quick-btn" data-question="How does merge sort work?">Merge Sort</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label for="apiKey">Google GenAI API Key:</label>
+                    <input type="password" id="apiKey" placeholder="Enter your API key">
+                    <small>Your API key is stored locally and not shared.</small>
+                </div>
+                <div class="setting-group">
+                    <label for="theme">Theme:</label>
+                    <select id="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="save-btn" id="saveSettings">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
